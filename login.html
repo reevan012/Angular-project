@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+    <script src="angular/angular.js"></script>
+    <script src="angular/angular-route.js"></script>
+    <script src="login.js"></script>
+</head>
+<body ng-controller="myCtrl">
+    <form>
+        Username:<input type="text" ng-model="userName" placeholder="Enter name"/><br/><br/>
+        Password:<input type="number" ng-model="passWord" placeholder="Enter password"/><br/><br/>
+        <input type="button" value="Login" ng-click="login()"/>
+        <a href="signup">Create new account</a>
+    </form>
+</body>
+</html>

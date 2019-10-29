@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Angular evedence</title>
+        <script src="angular/angular.js"></script>
+        <script src="evedence.js"></script>
+    </head>
+
+    <body ng-controller="myCtrl">
+        <form>
+           Name: <input type="text" ng-model="inputText" value="Name"/><br/><br/>
+           Price: <input type="number" ng-model="inputNumber" value="Price"/><br/><br/>
+            <input type="button" value="AddItem" ng-click="addItem()"/>
+            <input type="button" value="Update" ng-click="updateItem()"/>
+        </form>
+
+        <table border="1px solid black">
+            <tr>
+                <thead>
+                    <th colspan="2">Name</th>
+                    <th>Price</th>
+                    <th colspan="2">Action</th>
+                </thead>
+            </tr>
+            <tbody >
+            <tr ng-repeat="item in product">
+               
+                    <td colspan="2">{{item.name}}</td>
+                    <td>{{item.price}}</td>
+                    <td><input type="button" value="edit" ng-click="editItem($index)"/></td>
+                    <td><input type="button" value="delete" ng-click="delete($index)"/></td>
+                
+            </tr>
+        </tbody>
+        </table>
+
+
+    </body>
+</html>

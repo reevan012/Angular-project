@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="angular/angular.js"></script>
+        <script src="insert.js"></script>
+
+    </head>
+    <body ng-app="myApp" ng-controller="myCtrl">
+
+        <h2>{{test}}</h2>
+        <table border="1">
+            <tr>
+                <td><input type="text" ng-model="name"/></td>
+                <td><input type="number" ng-model="price"/></td>
+                <td><input type="button" ng-click="add()" value="Add"/></td>
+                <td><input type="button" ng-click="update()" value="Update"/></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Price</td>
+                <td colspan="2">Action</td>
+            </tr>
+            <tr ng-repeat="product in products">
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td><input type="button" ng-click="edit($index)" value="Edit"/></td>
+                <td><input type="button" ng-click="delete($index)" value="Delete"/></td>
+            </tr>
+        </table>
+    </body>
+</html>
